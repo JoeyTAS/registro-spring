@@ -1,0 +1,7 @@
+com\registro\controller\RegistroController.class
+com\registro\entidad\Cliente.class
+com\registro\modelo\ClienteImpl.class
+com\registro\entidad\Pedidos.class
+com\registro\RegistroApplication.class
+com\registro\servicio\ClientesServicio.class
+com\registro\repositorio\ClienteRepositorio.class

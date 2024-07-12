@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantillas/CabeceraPrincipal :: cabecera"></head>
+    <body>
+        <div>Aqui van los proveedores</div>
+        <div class="row text-end">
+               <a style="text-decoration: none; font-size: 30px;" th:href="@{/agregar}"><i class="bi bi-folder-plus"></i></a>
+                <hr/>
+            </div>
+          <div class="container-fluid mt-2 col-md-10" target="marco">
+                <table class="table table-striped table-bordered table-sm table-hover"
+                       style="font-size: 12px; cursor: pointer; width:100%;" id="tCliente">
+                    <thead>
+                        <tr>
+                            <th class="text-center bg-info text-white p-2 fs-6">ID</th>
+                            <th class="text-center bg-info text-white p-2 fs-6">RAZON SOCIAL/DNI</th>
+                            <th class="text-center bg-info text-white p-2 fs-6">RUC</th>
+                            <th class="text-center bg-info text-white p-2 fs-6">DIRECCION</th>
+                            <th class="text-center bg-info text-white p-2 fs-6">CORREO Y TELEFONO</th>
+                            <th class="text-center bg-info text-white p-2 fs-6">COMENTARIOS</th>
+                            <th class="text-center bg-info text-white p-2 fs-6"><i class="bi bi-clipboard-data" style="font-size: 16px;"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="ListaCliente : ${ListaCliente}">
+                            <td class="text-center align-middle text-secondary" style="width: 2%;" th:text="${ListaCliente.idCliente}"></td>
+                            <td class="text-center align-middle text-secondary" style="width: 10%;" th:text="${ListaCliente.nombre}"></td>
+                            <td class="text-center align-middle text-secondary" style="width: 2%;" th:text="${ListaCliente.rucC}"></td>
+                            <td class="text-center align-middle text-secondary" style="width: 5%;" th:text="${ListaCliente.direccion}"></td>
+                            <td class="text-center align-middle text-secondary" style="width: 10%;" th:text="${ListaCliente.correo + ' / ' + ListaCliente.telefono}"></td>
+                            <td class="text-center align-middle text-secondary" style="width: 25%;" th:text="${ListaCliente.comentarios}"></td>
+                            <td class="text-center align-middle text-secondary" style="width: 4%; text-align: center;">
+                                <a th:href="@{/actualizar/}+${ListaCliente.idCliente}"
+                                   style="text-decoration: none;"
+                                   data-toggle="tooltip" data-placement="top" title="ACTUALIZAR REGISTRO SELECCIONADO">
+                                    <i class="bi bi-arrow-clockwise" style="font-size: 24px; color: teal;"></i>
+                                </a>
+                                <a th:href="@{/eliminar/}+${ListaCliente.idCliente}"
+                                   style="text-decoration: none;"
+                                   data-toggle="tooltip" data-placement="top" title="ELIMINAR REGISTRO SELECCIONADO">
+                                    <i class="bi bi-trash" style="font-size: 24px; color: teal;"></i>
+                                </a>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </body>
+</html>

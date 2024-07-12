@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantillas/CabeceraPrincipal :: cabecera"></head>
+    <body>
+        <div>Lista de proveedores</div>
+        <p>Informacion del coche</p>
+        <p th:text="${cliente.idCliente}"></p>
+        <p th:text="${cliente.nombre}"></p>
+        <p th:text="${cliente.rucC}"></p>
+        <p th:text="${cliente.direccion }"></p>
+        <p th:text="${cliente.telefono + ' / ' + cliente.correo}"></p>
+        <p th:text="${cliente.comentarios}"></p>
+        
+
+    </body>
+</html>

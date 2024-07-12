@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantillas/CabeceraPrincipal :: cabecera"></head>
+    <body>
+        <div class="row text-center" style="color: purple;">
+           <h3>Registro Proveedores</h3>
+        </div>
+        <div class="row text-end">
+            <a style="text-decoration: none; font-size: 30px;" th:href="@{ver}"><i class="bi bi-clipboard2-data"> </i></a>
+            <hr/>
+        </div>
+        <!-- Registro coches -->
+        <form th:action="@{/registro}" method="post" th:object="${cliente}">
+    <div class="container-fluid col-md-6">
+        <div class="card border-info">
+            <div class="card card-header text-center text-white bg-info p-3 fs-3">FORMULARIO DE PROVEEDORES</div>
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label for="nombre">Nombre de la empresa</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre empresa" th:field="*{nombre}" required/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="ruc">RUC</label>
+                        <input type="text" class="form-control" id="ruc" name="ruc" placeholder="RUC" th:field="*{rucC}" required/>
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección" th:field="*{direccion}" required/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" th:field="*{telefono}" required/>
+                    </div>
+                    <div class="col-md-10 mb-3">
+                        <label for="correo">Correo</label>
+                        <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo" th:field="*{correo}" required/>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="comentarios">Comentarios</label>
+                        <textarea class="form-control" id="comentarios" name="comentarios" placeholder="Comentarios" th:field="*{comentarios}"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-info text-star text-white">
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <button class="btn btn-primary" type="submit">Registrar Proveedor</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+    </body>
+</html>
